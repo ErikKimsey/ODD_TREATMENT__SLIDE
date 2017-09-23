@@ -1,0 +1,25 @@
+body {
+  background: salmon;
+}
+
+.outer-container {
+  background: rgb(111,222,222);
+  width: 100px;
+  height: 100px;
+}
+
+svg {
+  background: salmon;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+circle {
+  background: blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
