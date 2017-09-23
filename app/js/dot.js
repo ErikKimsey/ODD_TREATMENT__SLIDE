@@ -7,10 +7,10 @@ export class Dot {
   this.cx = cx;
   this.cy = cy;
   this.radius = rad;
-  this.svg = null;
   this.dot = null;
   this.width = 199;
   this.height = 533;
+  console.log("in constructor this is ",this);
 }
 
   buildDot(){
@@ -20,6 +20,12 @@ export class Dot {
   }
 
   onDrag(){
-    console.log("dragging");
+    console.log("new Y is ", d3.event.y);
+    if(d3.event.y > 101 && d3.event.y < 433){
+      d3.select(this).attr("cy", d3.event.y + 99);
+    } else {
+      return null;
+    }
+    console.log("in dragging this is ", this);
   }
 }

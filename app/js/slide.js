@@ -7,6 +7,4 @@ export class Slide {
     this.width = width;
     this.height = height;
   }
-
-
 }

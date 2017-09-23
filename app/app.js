@@ -5,8 +5,8 @@ import './css/main.css';
 
 (function(){
 
-  var dot = new Dot(200, 200, 99).buildDot();
-  console.log(dot);
-  dot.call(d3.drag().on("drag", dot.onDrag));
+  var dot = new Dot(198, 200, 99);
+  var built = dot.buildDot();
+  built.call(d3.drag().on("drag", dot.onDrag));
 
 })();

@@ -3,9 +3,8 @@ body {
 }
 
 .outer-container {
-  background: rgb(111,222,222);
-  width: 100px;
-  height: 100px;
+  width: 900px;
+  height: 700px;
 }
 
 svg {
