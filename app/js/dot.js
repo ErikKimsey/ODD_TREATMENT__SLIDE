@@ -6,10 +6,10 @@ import '../css/main.css';
 export class Dot {
   constructor(cx, cy, rad){
   this.cx = cx + "%";
-  this.cy = cy + "%";
+  this.cy = cy;
   this.radius = rad;
   this.dot = null;
-  this.width = 199;
+  this.width = 42;
   this.height = 533;
   this.yEvent = null;
   // console.log("in constructor this is ",this);
@@ -22,13 +22,19 @@ export class Dot {
   }
 
   onDrag(){
-    var percEv = ((d3.event.y * 100)/533);
-    console.log(("percEv is ",percEv));
-    console.log("new Y is ", d3.event.y);
-    if(percEv > 20 && percEv < 81){
-      d3.select(this).attr("cy", percEv + "%");
-    } else if(d3.event.y >= 81){
-      d3.select(this).attr("cy", "20%");
+    // var percEv = ((d3.mouse.y * 100)/533);
+    // if(percEv < 20) {percEv = 20;}
+    // console.log("percEv is ",percEv);
+
+    /*
+    TODO: if(mobile or small screen, then use below logix with "touch" event)
+    */
+    var mouseAt = d3.event.y;
+    console.log("eventY is ", d3.event.y);
+    if(mouseAt > 90 && mouseAt < 435){
+      d3.select(this).attr("cy", mouseAt);
+    } else if(mouseAt >= 435){
+      d3.select(this).attr("cy", 98);
     } else {
       return null;
     }
