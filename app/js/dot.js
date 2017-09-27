@@ -5,8 +5,8 @@ import '../css/main.css';
 
 export class Dot {
   constructor(cx, cy, rad){
-  this.cx = cx;
-  this.cy = cy;
+  this.cx = cx + "%";
+  this.cy = cy + "%";
   this.radius = rad;
   this.dot = null;
   this.width = 199;
@@ -22,11 +22,13 @@ export class Dot {
   }
 
   onDrag(){
+    var percEv = ((d3.event.y * 100)/533);
+    console.log(("percEv is ",percEv));
     console.log("new Y is ", d3.event.y);
-    if(d3.event.y > 61 && d3.event.y < 433){
-      d3.select(this).attr("cy", d3.event.y);
-    } else if(d3.event.y >= 433){
-      d3.select(this).attr("cy", (d3.event.y + 99) - d3.event.y);
+    if(percEv > 20 && percEv < 81){
+      d3.select(this).attr("cy", percEv + "%");
+    } else if(d3.event.y >= 81){
+      d3.select(this).attr("cy", "20%");
     } else {
       return null;
     }

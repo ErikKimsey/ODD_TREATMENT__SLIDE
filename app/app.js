@@ -6,7 +6,7 @@ import './css/main.css';
 
 (function(){
 
-  var dot = new Dot(99, 101, 99);
+  var dot = new Dot(50, 20, 99);
   var built = dot.buildDot();
   var shake = new Shake();
   built.call(d3.drag().on("drag", dot.onDrag));
